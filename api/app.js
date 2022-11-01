@@ -1,12 +1,15 @@
 const createError = require('http-errors');
 const express = require('express');
+const apiUtils = require('./utils/apiUtils');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const { isSkipList } = require('./utils/skipList');
 const models = require('./models');
 
 const app = express();
 const port = 3010;
 
+app.use(apiUtils);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -21,7 +24,8 @@ app.use((req, res, next) => {
 
 app.use('/', require('./routes/index'));
 
-app.use('/api/v1', require('./routes/api'));
+app.use('/api/v1', isSkipList, require('./routes/api'));
+
 app.use((req, res, next) => {
   next(createError(404));
 });
