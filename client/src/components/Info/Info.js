@@ -36,6 +36,7 @@ const Info = ({ data, getCurrency, currencyData }) => {
       sx={{
         maxWidth: 400,
         borderRadius: '10px',
+        boxShadow: '5px 5px 5px 5px rgba(0.1, 0.4, 0.1, 0.2)',
       }}
     >
       <CardMedia
@@ -49,7 +50,7 @@ const Info = ({ data, getCurrency, currencyData }) => {
           {data.name}
         </Typography>
         <Typography variant="body2">
-          {`Modena Local: ${data.currency.name}`}
+          {`Modena Local: ${data.currency.name} ${data.currency.symbol} (${data.currency.code})`}
         </Typography>
         <ToggleButtonGroup
           sx={{ backgroundColor: 'white' }}

@@ -4,9 +4,18 @@ const apiUtils = require('./utils/apiUtils');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const models = require('./models');
-
 const app = express();
 const port = 3010;
+
+const limiter = require('express-limiter')(app);
+
+limiter({
+  path: '/api/action',
+  method: 'get',
+  lookup: ['connection.remoteAddress'],
+  total: 150,
+  expire: 1000 * 60 * 60
+});
 
 app.use(apiUtils);
 app.use(express.json());

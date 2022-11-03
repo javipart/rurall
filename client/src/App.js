@@ -37,6 +37,8 @@ const App = () => {
   }
 
   const getData = async () => {
+    setDataIp(null);
+    setError(null);
     setLoading(true);
     const re = /^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$/;
     const isValidIp = re.test(ip);
