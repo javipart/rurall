@@ -3,7 +3,6 @@ const express = require('express');
 const apiUtils = require('./utils/apiUtils');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const { isSkipList } = require('./utils/skipList');
 const models = require('./models');
 
 const app = express();
@@ -24,16 +23,17 @@ app.use((req, res, next) => {
 
 app.use('/', require('./routes/index'));
 
-app.use('/api/v1', isSkipList, require('./routes/api'));
+app.use('/api/v1', require('./routes/api'));
 
 app.use((req, res, next) => {
   next(createError(404));
 });
 
 app.use((err, req, res, next) => {
-  const statusCode = err.status || 500;
+  const statusCode = err.status || 202;
   res.status(statusCode);
-  res.json({ success: false, data: err });
+  console.error(`${req.method} ${req.utils.getHost(req)}${req.path} ${statusCode} - ${err.message}`);
+  res.json(req.utils.create_response(false, req.utils.format_error(err)));
 });
 
 app.listen(port, () => {

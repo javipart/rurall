@@ -1,13 +1,13 @@
 const axios = require('axios');
 
 module.exports = class RestClient {
-  constructor(host, name, timeout = 5000) {
+  constructor(host, name, timeout = 5000, apikey = '') {
     this.host = host;
     this.name = name;
     this.instance = axios.create({
       baseURL: this.host,
-      headers: { 'Content-Type': 'application/json' },
-      timeout,
+      headers: { 'Content-Type': 'application/json', apikey },
+      timeout: parseInt(timeout),
     });
     this.dataSend = {};
   }

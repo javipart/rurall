@@ -4,9 +4,9 @@ const router = express.Router();
 const routerBase = express.Router();
 
 
-const controller = require('../../controllers/locate.controller');
+const controller = require('../../controllers/currency.controller');
 
-routerBase.route('/:currency')
+routerBase.route('/:from/:to')
   .get(controller.get);
 
 router.use('/currency', routerBase);

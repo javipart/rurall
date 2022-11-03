@@ -8,6 +8,10 @@ const lib = {
 
   getHost: req => `${req.protocol}://${req.get('host')}`,
 
+  format_error: err => ({
+    message: err.message,
+    error: err.toString(),
+  }),
 };
 
 module.exports = (req, res, next) => {
