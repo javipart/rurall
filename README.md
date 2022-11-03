@@ -5,19 +5,19 @@
 ## Descripción
 La prueba se desarrolló con JavaScript, para despliegue Docker.
 * Backend:
-*  NodeJS
-*  Express
-*  MongoDB (Mongoose - MongoAtlas)
-*  Test (Supertest, Jest)
+  * NodeJS
+  * Express
+  * MongoDB (Mongoose - MongoAtlas)
+  * Test (Supertest, Jest)
 
 * Frontend:
-*  ReactJS (create-react-app)
-*  MUI ([https://mui.com/])
+  * ReactJS (create-react-app)
+  * MUI ([https://mui.com/])
 
 * APIS Externas
-*  [https://ipapi.com/]
-*  [https://restcountries.com/]
-*  [https://apilayer.com/]
+  * [https://ipapi.com/]
+  * [https://restcountries.com/]
+  * [https://apilayer.com/]
 
 ## Instrucciones
 1. Clonar el proyecto
