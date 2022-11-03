@@ -12,19 +12,19 @@ La prueba se desarrolló con JavaScript, para despliegue Docker.
 
 * Frontend:
   * ReactJS (create-react-app)
-  * MUI ([https://mui.com/])
+  * [MUI](https://mui.com/)
 
 * APIS Externas
-  * [https://ipapi.com/]
-  * [https://restcountries.com/]
-  * [https://apilayer.com/]
+  * [Ipapi](https://ipapi.com/)
+  * [Restcountries](https://restcountries.com/)
+  * [Apilayer](https://apilayer.com/)
 
 ## Instrucciones
 1. Clonar el proyecto
 2. Ubicarse en la raíz del Proyecto y ubicarse en la rama `initial-app`
-3. Continuando en la raíz del proyecto, escribir el comando `docker-compose up --build -d`.
+3. Continuando en la raíz del proyecto, escribir el comando `docker-compose up --build -d`
 4. Esperar la finalización del proceso de Docker
-5. Para ingresar al cliente, debe ir a [http://localhost:3000]
+5. Para ingresar al cliente, debe ir a [localhost](http://localhost:3000)
 6. Ya en el navegador, ingresar IPs para probar el funcionamiento.
 
 En la DB Mongo, existe una IP bloqueada (blacklist) y es: **10.20.30.40**.
