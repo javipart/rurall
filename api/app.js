@@ -45,8 +45,4 @@ app.use((err, req, res, next) => {
   res.json(req.utils.create_response(false, req.utils.format_error(err)));
 });
 
-app.listen(port, () => {
-  console.info(`Server on port ${port}`);
-});
-
 module.exports = app;
