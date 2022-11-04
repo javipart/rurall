@@ -47,7 +47,7 @@ const Info = ({ data, getCurrency, currencyData }) => {
       />
       <CardContent sx={{ backgroundColor: 'lightgray' }}>
         <Typography gutterBottom variant={'h5'} component={'div'}>
-          {data.name}
+          {`${data.name} (${data.iso})`}
         </Typography>
         <Typography variant="body2">
           {`Modena Local: ${data.currency.name} ${data.currency.symbol} (${data.currency.code})`}
